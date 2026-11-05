@@ -1,0 +1,42 @@
+{
+  "institute": "saqqara",
+  "note": "Course lists are intentionally empty. Import the official study plans from the Admin panel (CSV or JSON). Credit-hour totals below come from the official institute page.",
+  "programs": [
+    {
+      "id": "cs", "name_ar": "علوم الحاسب", "name_en": "Computer Science",
+      "department_ar": "قسم علوم الحاسب", "language": "ar/en", "total_credits": 151,
+      "plan_url": "https://thebes.edu.eg/storage/app/public/172/%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A9%20%D9%84%D8%B9%D9%84%D9%88%D9%85%20%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D8%A8.pdf",
+      "status": "pending_import", "courses": []
+    },
+    {
+      "id": "mis", "name_ar": "نظم المعلومات الإدارية", "name_en": "Management Information Systems",
+      "department_ar": "قسم نظم معلومات الأعمال", "language": "ar/en", "total_credits": 168,
+      "plan_url": "https://thebes.edu.eg/storage/app/public/131/%D8%A7%D9%84%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D9%8A%D8%A9%20%D9%86%D8%B8%D9%85%20%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA.docx",
+      "status": "pending_import", "courses": []
+    },
+    {
+      "id": "ba", "name_ar": "إدارة الأعمال", "name_en": "Business Administration",
+      "department_ar": "قسم إدارة الأعمال", "language": "ar/en", "total_credits": 132,
+      "plan_url": "https://thebes.edu.eg/public/storage/613/Program%20Description.pdf",
+      "status": "pending_import", "courses": []
+    },
+    {
+      "id": "acc-ar", "name_ar": "المحاسبة والمراجعة (شعبة اللغة العربية)", "name_en": "Accounting & Auditing (Arabic track)",
+      "department_ar": "قسم المحاسبة والمراجعة", "language": "ar", "total_credits": 132,
+      "plan_url": "https://thebes.edu.eg/ar/institutes/thebes-higher-institute-of-management-information-technology%20-%20Giza",
+      "status": "pending_import", "courses": []
+    },
+    {
+      "id": "acc-en", "name_ar": "المحاسبة والمراجعة (شعبة اللغة الإنجليزية)", "name_en": "Accounting & Auditing (English track)",
+      "department_ar": "قسم المحاسبة والمراجعة", "language": "en", "total_credits": 132,
+      "plan_url": "http://thebes.edu.eg/public/storage/613/Description%20of%20the%20accounting%20program_en.pdf",
+      "status": "pending_import", "courses": []
+    },
+    {
+      "id": "bank", "name_ar": "إدارة البنوك وأسواق المال", "name_en": "Banking & Financial Markets Management",
+      "department_ar": "قسم إدارة الأعمال", "language": "ar/en", "total_credits": 141,
+      "plan_url": "https://thebes.edu.eg/ar/institutes/thebes-higher-institute-of-management-information-technology%20-%20Giza",
+      "status": "pending_import", "courses": []
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>طيبة AI – المساعد الذكي للطالب</title>
+  <meta name="description" content="Taiba AI – the smart student assistant for Thebes Higher Institute, Giza (Saqqara Tourist Road).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><path d="M16 3 29 27H3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 11 22.5 23h-13z" fill="currentColor" opacity=".85"/></svg>
+      </span>
+      <div>
+        <h1 data-i18n="title">طيبة AI</h1>
+        <p class="sub" data-i18n="subtitle">المساعد الذكي لطلاب معهد طيبة – الجيزة (طريق سقارة)</p>
+      </div>
+    </div>
+    <button id="langBtn" class="ghost" type="button" aria-label="Language">EN</button>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-chat" data-tab="chat" aria-selected="true" data-i18n="tab_chat">المحادثة</button>
+    <button role="tab" id="tab-gpa" data-tab="gpa" aria-selected="false" data-i18n="tab_gpa">حاسبة المعدل</button>
+    <button role="tab" id="tab-cur" data-tab="cur" aria-selected="false" data-i18n="tab_cur">المقررات</button>
+    <button role="tab" id="tab-src" data-tab="src" aria-selected="false" data-i18n="tab_src">المصادر</button>
+  </nav>
+
+  <main>
+    <!-- CHAT -->
+    <section id="panel-chat" class="panel" role="tabpanel">
+      <div id="log" class="log" aria-live="polite"></div>
+      <div id="chips" class="chips"></div>
+      <form id="chatForm" class="composer" autocomplete="off">
+        <input id="msg" type="text" maxlength="1000" required data-i18n-ph="placeholder" placeholder="اكتب سؤالك هنا…">
+        <button class="primary" type="submit" data-i18n="send">إرسال</button>
+      </form>
+      <p class="note" data-i18n="disclaimer">إجابات طيبة AI مبنية على الوثائق الرسمية المتاحة فقط. إذا لم تتوفر المعلومة سيطلب منك التأكد من شؤون الطلاب.</p>
+    </section>
+
+    <!-- GPA -->
+    <section id="panel-gpa" class="panel" role="tabpanel" hidden>
+      <div id="scaleWarn" class="warn" hidden></div>
+      <div id="semesters"></div>
+      <div class="row-actions">
+        <button id="addSem" class="ghost" type="button" data-i18n="add_sem">+ إضافة فصل دراسي آخر</button>
+      </div>
+      <fieldset id="prevBox" class="prev">
+        <legend data-i18n="prev_title">سجلك السابق (اختياري – لحساب المعدل التراكمي)</legend>
+        <label><span data-i18n="prev_gpa">المعدل التراكمي السابق</span>
+          <input id="prevGpa" type="number" step="0.01" min="0" inputmode="decimal"></label>
+        <label><span data-i18n="prev_credits">الساعات المعتمدة السابقة</span>
+          <input id="prevCredits" type="number" step="0.5" min="0" inputmode="decimal"></label>
+      </fieldset>
+      <button id="calc" class="primary wide" type="button" data-i18n="calc">احسب المعدل</button>
+      <div id="gpaResult" class="result" hidden></div>
+      <details class="scale">
+        <summary data-i18n="scale_title">مقياس التقديرات المستخدم</summary>
+        <div id="scaleTable"></div>
+      </details>
+    </section>
+
+    <!-- CURRICULUM -->
+    <section id="panel-cur" class="panel" role="tabpanel" hidden>
+      <label class="field"><span data-i18n="program">البرنامج</span>
+        <select id="program"></select></label>
+      <div id="curView"></div>
+    </section>
+
+    <!-- SOURCES -->
+    <section id="panel-src" class="panel" role="tabpanel" hidden>
+      <p class="note" data-i18n="src_intro">الوثائق الرسمية التي تعتمد عليها الإجابات:</p>
+      <ul id="srcList" class="srclist"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span data-i18n="foot">لا يمثل هذا المساعد بديلاً عن شؤون الطلاب. للتأكيد:</span>
+    <a href="tel:02238093110" dir="ltr">02238093110</a> ·
+    <a href="https://wa.me/201001771142" target="_blank" rel="noopener noreferrer">WhatsApp</a> ·
+    <a href="https://thebes.edu.eg/ar" target="_blank" rel="noopener noreferrer">thebes.edu.eg</a>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

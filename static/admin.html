@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Taiba AI – Admin</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><div><h1>Taiba AI · Admin</h1><p class="sub">Update the knowledge base without touching the code</p></div></div>
+    <a class="ghost linkbtn" href="/">← Student app</a>
+  </header>
+
+  <main>
+    <section class="panel" id="login">
+      <label class="field">Admin token
+        <input id="token" type="password" autocomplete="off" placeholder="ADMIN_TOKEN from the server environment"></label>
+      <button id="loginBtn" class="primary" type="button">Sign in</button>
+      <p id="loginErr" class="note"></p>
+    </section>
+
+    <div id="app" hidden>
+      <section class="panel gap">
+        <h2>Knowledge base <small id="stats"></small></h2>
+        <div id="docs"></div>
+        <button id="reindex" class="ghost" type="button">Rebuild index</button>
+      </section>
+
+      <section class="panel gap">
+        <h2>Upload a document</h2>
+        <p class="note">PDF, Word (.docx), Markdown, text, HTML or CSV — handbooks, regulations, exam schedules, announcements, FAQs.</p>
+        <form id="upForm" class="grid">
+          <label class="field">File<input id="upFile" type="file" required accept=".pdf,.docx,.md,.txt,.html,.htm,.csv"></label>
+          <label class="field">Title<input id="upTitle" type="text" maxlength="200" placeholder="e.g. Academic regulations 2026"></label>
+          <label class="field">Official source link<input id="upUrl" type="url" placeholder="https://thebes.edu.eg/..."></label>
+          <label class="field">Category<select id="upCat"></select></label>
+          <label class="field">Institute
+            <select id="upInst"><option value="saqqara">Saqqara / Giza</option><option value="academy">Academy-wide (applies to all)</option></select></label>
+          <button class="primary" type="submit">Upload &amp; index</button>
+        </form>
+        <p id="upMsg" class="note"></p>
+      </section>
+
+      <section class="panel gap">
+        <h2>Add from an official web page / PDF</h2>
+        <p class="note">Only thebes.edu.eg and tiba.edu.eg links are accepted.</p>
+        <form id="urlForm" class="grid">
+          <label class="field">URL<input id="urlVal" type="url" required placeholder="https://thebes.edu.eg/..."></label>
+          <label class="field">Title<input id="urlTitle" type="text" maxlength="200"></label>
+          <label class="field">Category<select id="urlCat"></select></label>
+          <label class="field">Institute
+            <select id="urlInst"><option value="saqqara">Saqqara / Giza</option><option value="academy">Academy-wide</option></select></label>
+          <button class="primary" type="submit">Fetch &amp; index</button>
+        </form>
+        <p id="urlMsg" class="note"></p>
+      </section>
+
+      <section class="panel gap">
+        <h2>Import study plan (courses)</h2>
+        <p class="note">CSV or JSON with columns: <code>code, name_ar, name_en, credits, year, semester (first/second/summer), prerequisites, description, topics, resources</code>. Separate list values with “;”. Importing replaces that program's course list.</p>
+        <form id="curForm" class="grid">
+          <label class="field">Program<select id="curProg"></select></label>
+          <label class="field">File<input id="curFile" type="file" required accept=".csv,.json"></label>
+          <button class="primary" type="submit">Import courses</button>
+        </form>
+        <p id="curMsg" class="note"></p>
+      </section>
+
+      <section class="panel gap">
+        <h2>Grading scale</h2>
+        <p class="note">JSON used by the GPA calculator. Replace the template with the scale from the official academic regulations and set <code>"verified": true</code> and <code>"source"</code>.</p>
+        <textarea id="scaleJson" rows="14" spellcheck="false"></textarea>
+        <button id="saveScale" class="primary" type="button">Save scale</button>
+        <p id="scaleMsg" class="note"></p>
+      </section>
+    </div>
+  </main>
+  <script src="/static/admin.js"></script>
+</body>
+</html>
